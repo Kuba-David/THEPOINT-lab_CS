@@ -8,6 +8,7 @@
     justify-content: center;
     gap: $spacing-lg;
     align-items: center;
+    box-shadow: $box-shadow-default;
 }
 
 .logo {
@@ -32,6 +33,8 @@
 p {
     font-size: 20px;
     color: $color-secondary-dark;
+    text-align: center;
+    line-height: 1.2;
 }
 .highlight {
     color: $color-secondary;
@@ -39,8 +42,6 @@ p {
 
 .point {
     color: $color-accent;
-    font-family: 'Sentient-Variable';
-    font-weight: $font-weight-bold;
 }
 
 .moving-point-wrapper {

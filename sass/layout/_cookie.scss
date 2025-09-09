@@ -1,0 +1,74 @@
+#cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #212121db;
+            box-shadow: $box-shadow-default;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-top: 1px solid #444;
+            border-radius: 20px 20px 0 0;
+
+            /* Pro animaci zobrazení/skrytí */
+            transform: translateY(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        #cookie-consent-banner.visible {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        .cookie-text {
+            flex: 8;
+            color: $color-secondary;
+            font-size: $font-size-medium;
+            line-height: 1.2;
+            padding: 0 20px;
+        }
+        .cookie-text strong {
+            color: #fff;
+            font-weight: bold;
+        }
+        .cookie-button {
+            flex: 1;
+            background-color: transparent;
+            color: $color-secondary;
+            border: 1px solid $color-secondary;
+            padding: 12px 25px;
+            border-radius: $border-radius-button;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: $font-size-medium;
+            letter-spacing: $letter-spacing-tanker;
+            font-weight: normal;
+            white-space: nowrap;
+            transition: background-color 0.3s;
+        }
+        .cookie-button:hover {
+            background-color: $color-primary-light;
+        }
+        /* Media query pro menší obrazovky */
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cookie-text {
+                text-align: left;
+                padding: 0 10px;
+            }
+        }

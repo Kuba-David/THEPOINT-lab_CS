@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE POINT | lab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Nezapomeň si správně odkázat na svůj CSS soubor -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <section class="home">
@@ -12,30 +13,42 @@
             <img class="logo" src="images/THEPOINT_LOGO.svg">
             <h2 class="subtitle">is being made<span class="point">.</span></h2>
         </div>
-
         <div class="content">
-            <p>In a world where everyone shouts, <span class="highlight">we whisper</span>.</p>
-            <p>Be <span class="highlight">the first to hear</span> what we have to say.</p>
+            <p>In a world of noise, we're crafting a quiet statement;<br><span class="highlight">be the first</span> to give it a voice.</p>
         </div>
 
-        <div class="form-selection" id="contact">
-            <form class="form-container" id="contact-form" method="POST" action="send-email.php">
-                <!-- Jméno -->
-                <div class="form-icon">
-                    <svg class="icon"><use href="./icons.svg#user"></use></svg>
-                    <input type="text" id="name" name="name" placeholder="Got a name? Type it in here..." required>
+        <!-- Začátek MailerLite Bloku -->
+        <div id="mlb2-30668325" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-30668325">
+            
+            <!-- Část pro zobrazení formuláře -->
+            <div class="row-form">
+                <div class="form-selection" id="contact">
+                    <!-- Tvůj formulář, nyní napojený na MailerLite -->
+                    <form class="form-container" action="https://assets.mailerlite.com/jsonp/1786860/forms/165061990191990461/subscribe" method="post" target="_blank">
+                        
+                        <!-- E-mail -->
+                        <div class="form-icon">
+                            <svg class="icon"><use href="./icons.svg#email"></use></svg>
+                            <!-- DŮLEŽITÉ: Změněn atribut 'name' na 'fields[email]' -->
+                            <input type="email" id="email" name="fields[email]" placeholder="Got an email? Share it with us..." required autocomplete="email" aria-label="email" aria-required="true">
+                        </div>
+                        
+                        <!-- Skrytá pole nutná pro MailerLite -->
+                        <input type="hidden" name="ml-submit" value="1">
+                        <input type="hidden" name="anticsrf" value="true">
+
+                        <!-- Odeslat -->
+                        <button type="submit">MAKE IT REAL</button>
+                    </form>
                 </div>
-                <!-- E-mail -->
-                <div class="form-icon">
-                    <svg class="icon"><use href="./icons.svg#email"></use></svg>
-                    <input type="email" id="email" name="email" placeholder="Got an email? Share it with us..." required>
-                </div>
-                <!-- Honeypot -->
-                <input type="text" name="honeypot" style="display:none;">
-                <!-- Odeslat -->
-                <button type="submit">WAIT FOR IT</button>
-            </form>
+            </div>
+
+            <!-- Část pro zobrazení zprávy o úspěchu -->
+            <div class="ml-form-successBody row-success" style="display: none; text-align: center;">
+                <h2 class="subtitle" style="margin-bottom: 32px;">You'll make the point<span class="point">!</span></h2>
+            </div>
         </div>
+        <!-- Konec MailerLite Bloku -->
     </section>
 
     <div class="moving-point-wrapper">
@@ -45,6 +58,33 @@
         </svg>
     </div>
     
+    <div id="cookie-consent-banner">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                <strong>Our point on cookies.</strong><br>We use them to remember your choices and to understand how you interact with our thoughts.<br>By clicking "Accept", you agree to this. Nothing more, nothing less.
+            </p>
+            <button id="accept-cookies-btn" class="cookie-button">Accept</button>
+            <button id="reject-cookies-btn" class="cookie-button">Reject</button>
+        </div>
+    </div>
+
+    <!-- JS pro MailerLite (musí být před main.js) -->
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <script>
+      function ml_webform_success_30668325() {
+        var $ = ml_jQuery || jQuery;
+        var formContainer = $('.ml-subscribe-form-30668325');
+        if (formContainer.length > 0) {
+            formContainer.find('.row-success').show();
+            formContainer.find('.row-form').hide();
+        }
+      }
+    </script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/1786860/forms/165061990191990461/takel");
+    </script>
+    
+    <!-- Tvůj hlavní skript pro animaci -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
