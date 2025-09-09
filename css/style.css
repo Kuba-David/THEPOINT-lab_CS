@@ -228,12 +228,12 @@ button:active {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(33, 33, 33, 0.8588235294);
+  background-color: rgba(33, 33, 33, 0.9254901961);
   box-shadow: 0 0px 7px #2D2D2B;
   padding: 20px;
   box-sizing: border-box;
   z-index: 1000;
-  border-top: 1px solid #444;
+  border-top: 1px solid #333333;
   border-radius: 20px 20px 0 0;
   /* Pro animaci zobrazení/skrytí */
   transform: translateY(100%);
