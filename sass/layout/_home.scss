@@ -26,8 +26,14 @@
 }
 
 .subtitle {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-large;
     color: $color-secondary;
+}
+
+.success {
+    font-size: $font-size-large;
+    color: $color-secondary;
+    margin: $spacing-lg 0;
 }
 
 p {
@@ -43,6 +49,28 @@ p {
 .point {
     color: $color-accent;
 }
+
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+li a {
+    display: flex;
+    font-family: $font-header;
+    font-size: $font-size-medium;
+    letter-spacing: $letter-spacing-tanker;
+    color: $color-secondary;
+    align-items: center;
+    gap: $spacing-sm;
+}
+
+.inst-icon {
+    width: 24px;
+    height: 24px;
+    fill: $color-secondary;
+  }
 
 .moving-point-wrapper {
     position: fixed;

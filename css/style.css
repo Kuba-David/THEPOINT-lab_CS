@@ -59,6 +59,84 @@ a {
   color: inherit;
 }
 
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(33, 33, 33, 0.9254901961);
+  box-shadow: 0 0px 7px #2D2D2B;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-top: 1px solid #333333;
+  border-radius: 20px 20px 0 0;
+  /* Pro animaci zobrazení/skrytí */
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#cookie-consent-banner.visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.cookie-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.cookie-text {
+  flex: 8;
+  color: #ECECEC;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 0 20px;
+}
+
+.cookie-text strong {
+  color: #fff;
+  font-weight: bold;
+}
+
+.cookie-button {
+  flex: 1;
+  background-color: transparent;
+  color: #ECECEC;
+  border: 1px solid #ECECEC;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.cookie-button:hover {
+  background-color: #333333;
+}
+
+/* Media query pro menší obrazovky */
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cookie-text {
+    text-align: left;
+    padding: 0 10px;
+  }
+}
 .home {
   display: flex;
   flex-direction: column;
@@ -87,8 +165,14 @@ a {
 }
 
 .subtitle {
-  font-size: 32px;
+  font-size: 28px;
   color: #ECECEC;
+}
+
+.success {
+  font-size: 28px;
+  color: #ECECEC;
+  margin: 32px 0;
 }
 
 p {
@@ -104,6 +188,28 @@ p {
 
 .point {
   color: #D41116;
+}
+
+li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  display: flex;
+  font-family: "Tanker-Regular", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  color: #ECECEC;
+  align-items: center;
+  gap: 8px;
+}
+
+.inst-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ECECEC;
 }
 
 .moving-point-wrapper {
@@ -221,83 +327,4 @@ button:active {
   left: 24px;
   transform: translate(-50%, -50%);
   fill: #2D2D2B;
-}
-
-#cookie-consent-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(33, 33, 33, 0.9254901961);
-  box-shadow: 0 0px 7px #2D2D2B;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 1000;
-  border-top: 1px solid #333333;
-  border-radius: 20px 20px 0 0;
-  /* Pro animaci zobrazení/skrytí */
-  transform: translateY(100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-#cookie-consent-banner.visible {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.cookie-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 20px;
-}
-
-.cookie-text {
-  flex: 8;
-  color: #ECECEC;
-  font-size: 14px;
-  line-height: 1.2;
-  padding: 0 20px;
-}
-
-.cookie-text strong {
-  color: #fff;
-  font-weight: bold;
-}
-
-.cookie-button {
-  flex: 1;
-  background-color: transparent;
-  color: #ECECEC;
-  border: 1px solid #ECECEC;
-  padding: 12px 25px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 0.1rem;
-  font-weight: normal;
-  white-space: nowrap;
-  transition: background-color 0.3s;
-}
-
-.cookie-button:hover {
-  background-color: #333333;
-}
-
-/* Media query pro menší obrazovky */
-@media (max-width: 768px) {
-  .cookie-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .cookie-text {
-    text-align: left;
-    padding: 0 10px;
-  }
 }
